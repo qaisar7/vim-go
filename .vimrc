@@ -86,6 +86,7 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>d <Plug>(go-decls)
+autocmd FileType go nnoremap <Leader>t :GoTest<CR> 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
@@ -117,7 +118,7 @@ nnoremap <leader>a :cclose<CR>
 " Map left and right arrow keys to open and close directories in NERDTree, only when NERDTree is focused
 let g:NERDTreeMapCloseDir="<Left>"
 let g:NERDTreeMapActivateNode="<Right>"
-let NERDTreeCustomOpenArgs = {'file': {'reuse': 'all', 'where': 'p', 'keepopen':1, 'stay':1}, 'dir':{}}
+let NERDTreeCustomOpenArgs = {'file': {'reuse': 'all', 'where': 'p', 'keepopen':0, 'stay':1}, 'dir':{}}
 " Shortcut to show/hide NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
 
