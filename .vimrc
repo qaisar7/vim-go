@@ -81,7 +81,7 @@ let g:go_fmt_command = "goimports"
 let g:go_def_mode = "gopls"
 let g:go_info_mode = "gopls"
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd BufRead,BufNewFile *.go NERDTree
+"autocmd BufRead,BufNewFile *.go NERDTree
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
@@ -118,6 +118,8 @@ nnoremap <leader>a :cclose<CR>
 let g:NERDTreeMapCloseDir="<Left>"
 let g:NERDTreeMapActivateNode="<Right>"
 let NERDTreeCustomOpenArgs = {'file': {'reuse': 'all', 'where': 'p', 'keepopen':1, 'stay':1}, 'dir':{}}
+" Shortcut to show/hide NERDTree
+nnoremap <leader>e :NERDTreeToggle<CR>
 
 if has('gui_running')
   set background=dark
