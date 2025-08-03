@@ -1,4 +1,8 @@
 call plug#begin('~/.vim/plugged')
+
+" plugin to automatically indent files in html
+Plug 'jasonwoodland/vim-html-indent'
+
 " colorscheme for python
 Plug 'morhetz/gruvbox'
 
@@ -80,4 +84,12 @@ autocmd FileType python colorscheme gruvbox
 " Run Go files in another window
 " autocmd FileType go nnoremap <buffer> <leader>r :w<CR>:split | terminal go run %<CR>
 nnoremap <leader>r :w<CR>:split \| terminal go run %<CR>
+
+" Enable indentation for html files
+filetype plugin indent on
+
+" Set indentation width to 2 spaces
+set tabstop=2       " Number of spaces that a <Tab> counts for
+set shiftwidth=2    " Number of spaces used for each indent level
+set expandtab       " Convert tabs to spaces, so indent uses spaces only
 
